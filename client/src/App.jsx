@@ -75,19 +75,7 @@ export default function App() {
     console.log('Solver response:', data);
     alert('Check console for solver response!');
   }
-
-  // Optional: test backend button
-  async function testBackend() {
-    const res = await fetch('http://localhost:3000/solve', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ cube: Array(54).fill('W') })
-    });
-
-    const data = await res.json();
-    console.log('Test backend response:', data);
-  }
-
+  
   return (
     <div style={{ padding: 20 }}>
       <h1>Rubik's Cube Input</h1>
@@ -113,10 +101,6 @@ export default function App() {
 
       <button onClick={handleSubmit} style={{ marginTop: 20, padding: '10px 20px' }}>
         Submit Cube
-      </button>
-
-      <button onClick={testBackend} style={{ marginTop: 10, padding: '10px 20px' }}>
-        Test Backend
       </button>
     </div>
   );
